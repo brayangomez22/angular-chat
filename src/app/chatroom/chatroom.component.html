@@ -1,0 +1,23 @@
+<ul class="chat-thread">
+	<li *ngFor="let item of items | async">
+		<img src="{{ item.photoURL }}" alt="avatar" />
+		<span>
+			{{ item.displayName }}
+		</span>
+		<span>
+			{{ item.text }}
+		</span>
+	</li>
+</ul>
+
+<div class="chat-window">
+	<input
+		class="chat-window-message"
+		autocomplete="off"
+		autofocus
+		type="text"
+		placeholder="Ingresar algo aqui"
+		[(ngModel)]="formValue"
+	/>
+	<button (click)="sendMessage()" [disabled]="!formValue">Send</button>
+</div>

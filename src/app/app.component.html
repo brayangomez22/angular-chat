@@ -1,0 +1,18 @@
+<div className="App">
+	<header>
+		<div class="container">
+			<h1>Sofka Chat</h1>
+			<div *ngIf="user !== null" class="signOut">
+				<button (click)="signOut()">Sign out</button>
+			</div>
+		</div>
+	</header>
+
+	<section *ngIf="user !== null">
+		<app-chatroom></app-chatroom>
+	</section>
+
+	<section *ngIf="user === null" class="signIn">
+		<button (click)="signIn()">Sign In</button>
+	</section>
+</div>
